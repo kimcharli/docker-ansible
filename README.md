@@ -28,6 +28,7 @@ base_ansible() {
             inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION} $@
 }
 
+alias ansible-update='docker pull inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION}'
 alias ansible-shell='base_ansible bash'
 alias ansible='base_ansible ansible'
 alias ansible-playbook='base_ansible ansible-playbook'
