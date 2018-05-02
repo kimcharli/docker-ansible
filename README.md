@@ -10,14 +10,26 @@ This allows you to :
 Just add these aliases to your ~/.bash_aliases in order to use ansible as it where installed on your computer.
 
 ```bash
-export DOCKER_ANSIBLE_VERSION=2.0
+export DOCKER_ANSIBLE_VERSION=2.5
 base_ansible() {
-	docker run -it --rm --env ANSIBLE_REMOTE_USER=${USER} --volume $SSH_AUTH_SOCK:/ssh-agent --env SSH_AUTH_SOCK=/ssh-agent -v ${PWD}:${PWD} -v ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts -w ${PWD} inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION} $@
+        docker run -it --rm \
+            --env ANSIBLE_REMOTE_USER=${USER} \
+            --env AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} \
+            --env AWS_PROFILE=${AWS_PROFILE} \
+            --volume $SSH_AUTH_SOCK:/ssh-agent \
+            --env SSH_AUTH_SOCK=/ssh-agent \
+            -v ${PWD}:project \
+            -v ${HOME}/.aws/:/root/.aws/ \
+            -v ${HOME}/.ssh/known_hosts:/root/.ssh/known_hosts \
+            -w ${PWD} \
+            inetsix/docker-ansible:${DOCKER_ANSIBLE_VERSION} $@
 }
-alias docker-ansible='base_ansible ansible'
-alias docker-ansible-playbook='base_ansible ansible-playbook'
-alias docker-ansible-vault='base_ansible ansible-vault'
-alias docker-ansible-galaxy='base_ansible ansible-galaxy'
+
+alias ansible-shell='base_ansible bash'
+alias ansible='base_ansible ansible'
+alias ansible-playbook='base_ansible ansible-playbook'
+alias ansible-vault='base_ansible ansible-vault'
+alias ansible-galaxy='base_ansible ansible-galaxy'
 ```
 
 ## Usage
