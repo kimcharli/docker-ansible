@@ -8,9 +8,9 @@ This allows you to :
 * share your ssh agent with the ansible docker
 * share your AWS CLI configuration
 * Use a specifc version without installation
-* Use AWS and Junos componants: aws cli, junos-eznc, Juniper.junos ansible module
+* Use AWS and Junos componants: `aws cli`, `junos-eznc`, `Juniper.junos` ansible module
 
-Just add these aliases to your ~/.{bash|zsh|...}_aliases in order to use ansible as it where installed on your computer.
+Just add these aliases to your `~/.{bash|zsh|...}_aliases` in order to use ansible as it where installed on your computer.
 
 ```bash
 export DOCKER_ANSIBLE_VERSION=2.5
@@ -51,10 +51,10 @@ ansible 2.5.2
   configured module search path = [u'/root/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
   ansible python module location = /usr/local/lib/python2.7/site-packages/ansible
   executable location = /usr/local/bin/ansible
-  python version = 2.7.14 (default, Apr 27 2018, 09:37:08) [GCC 4.9.2
+  python version = 2.7.14 (default, Apr 27 2018, 09:37:08) [GCC 4.9.2]
 ```
 
-If for some reasons, you need to use your installed ansible version, just use '\' in front of any ansible command like below:
+If for some reasons, you need to use your installed ansible version, just use `\\` in front of any ansible command like below:
 
 ```bash
 $ \ansible --version
