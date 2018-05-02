@@ -9,4 +9,5 @@ RUN apt-get update -qq && \
     pip install boto && \ 
     pip install boto3 && \ 
     pip install junos-eznc && \
+    pip install awscli && \
     ansible-galaxy install Juniper.junos
