@@ -1,5 +1,6 @@
 FROM python:2.7.15-alpine3.6
 
+# Install Basic Python libs
 RUN apk update && \
     apk add vim sshpass && \
     pip install ansible && \
