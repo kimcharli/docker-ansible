@@ -5,7 +5,7 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     ln -s /usr/local/bin/python /usr/bin/python && \
-    pip install ansible==2.4 && \
+    pip install ansible==2.4.* && \
     pip install jxmlease &&\
     pip install junos-eznc && \
     ansible-galaxy install Juniper.junos
