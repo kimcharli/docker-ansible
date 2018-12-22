@@ -1,10 +1,6 @@
-FROM python:2.7.15-slim-jessie
+FROM python:2.7-alpine3.6 
 
-RUN apt-get update -qq && \
-    DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -qq -y vim sshpass && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    ln -s /usr/local/bin/python /usr/bin/python && \
-    pip install ansible~=2.3.0 && \
-    pip install junos-eznc && \
-    ansible-galaxy install Juniper.junos
+RUN apk add --update --no-cache python-dev libffi-dev py-pip openssh-client sshpass build-base libssl1.0 openssl-dev && \
+    rm -rf /var/cache/apk/* && \
+    pip install ansible==2.3 && \
+    pip install jxmlease
