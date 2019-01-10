@@ -1,6 +1,9 @@
 docker-ansible : using ansible without installing it
 ======================================================
 
+[![](https://img.shields.io/docker/pulls/inetsix/docker-ansible.svg)](https://cloud.docker.com/u/inetsix/repository/docker/inetsix/docker-ansible)
+[![](https://images.microbadger.com/badges/image/inetsix/docker-ansible.svg)](https://microbadger.com/images/inetsix/telegraf-snmp)
+
 This docker allows you to use ansible on your computer without installing it.
 
 This allows you to :
