@@ -1,6 +1,7 @@
 docker-ansible : using ansible without installing it
 ======================================================
 
+![](https://img.shields.io/docker/build/inetsix/docker-ansible.svg)
 [![](https://img.shields.io/docker/pulls/inetsix/docker-ansible.svg)](https://cloud.docker.com/u/inetsix/repository/docker/inetsix/docker-ansible)
 [![](https://images.microbadger.com/badges/image/inetsix/docker-ansible.svg)](https://microbadger.com/images/inetsix/telegraf-snmp)
 
